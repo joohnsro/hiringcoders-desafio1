@@ -1,11 +1,13 @@
 (() => {
     const button = document.getElementById('send-email');
-    const input = document.getElementById('email-input');
+    const nameInput = document.getElementById('name-input');
+    const emailInput = document.getElementById('email-input');
 
     button.addEventListener('click', (event) => {
         event.preventDefault();
 
-        localStorage.setItem('newsletter-email', input.value);
+        localStorage.setItem('newsletter-name', nameInput.value);
+        localStorage.setItem('newsletter-email', emailInput.value);
     })
 
     const rollDown = document.getElementById('roll-down');

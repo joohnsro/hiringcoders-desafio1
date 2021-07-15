@@ -8,7 +8,8 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0; }
+  margin: 0;
+  text-shadow: 0px 0px 7px rgba(68, 68, 68, 0.57); }
   body * {
     box-sizing: border-box; }
   body a {
@@ -31,14 +32,15 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      position: relative;
-      margin-bottom: 120px; }
+      position: relative; }
       body main section#index .description {
         flex: 1;
         max-width: 45%;
         font-size: 24px;
         font-weight: 400;
-        text-align: center; }
+        text-align: center;
+        position: relative;
+        z-index: 2; }
         body main section#index .description h1 {
           font-size: 64px;
           text-align: left; }
@@ -60,26 +62,29 @@ body {
         max-width: 50%;
         position: absolute;
         top: 0;
-        right: 0; }
-    body main section#reasons h2 {
-      font-size: 56px;
-      text-align: center;
-      margin-bottom: 60px; }
-    body main section#reasons ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start; }
-      body main section#reasons ul li {
-        flex: 1;
-        max-width: 26%;
-        font-size: 18px;
-        line-height: 24px;
-        text-align: center; }
-        body main section#reasons ul li img {
-          max-height: 120px; }
+        right: 0;
+        z-index: 1; }
+    body main section#reasons {
+      margin-top: 40px; }
+      body main section#reasons h2 {
+        font-size: 56px;
+        text-align: center;
+        margin-bottom: 60px; }
+      body main section#reasons ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start; }
+        body main section#reasons ul li {
+          flex: 1;
+          max-width: 26%;
+          font-size: 18px;
+          line-height: 24px;
+          text-align: center; }
+          body main section#reasons ul li img {
+            max-height: 120px; }
     body main section#newsletter {
       padding-top: 2%;
       padding-bottom: 2%; }
@@ -103,9 +108,11 @@ body {
           border: none;
           padding: 12px; }
         body main section#newsletter .form-container input {
-          min-width: 400px;
+          min-width: 220px;
           font-weight: bold;
           background-color: #c4c4c4; }
+          body main section#newsletter .form-container input:not(:last-child) {
+            margin-right: 12px; }
         body main section#newsletter .form-container button {
           color: #ffffff;
           background-color: #680068;
@@ -113,7 +120,6 @@ body {
           text-transform: uppercase;
           text-align: center;
           min-width: 100px;
-          margin-left: 12px;
           cursor: pointer; }
   body footer {
     display: flex;
@@ -124,5 +130,39 @@ body {
     body footer a {
       font-size: 18px;
       font-weight: bold; }
+
+@media screen and (max-width: 991px) {
+  header {
+    padding: 24px 5% !important; }
+
+  main section {
+    padding: 2% 5% !important; }
+    main section#index .description {
+      max-width: 100% !important; }
+      main section#index .description h1, main section#index .description p {
+        max-width: 90%; }
+    main section#reasons h2 {
+      font-size: 42px !important;
+      text-align: center;
+      margin-bottom: 60px; }
+    main section#reasons ul {
+      flex-direction: column !important;
+      justify-content: center !important; }
+      main section#reasons ul li {
+        max-width: 100% !important; }
+        main section#reasons ul li:not(:last-child) {
+          margin-bottom: 24px; }
+    main section#newsletter .form-container input {
+      min-width: 100% !important;
+      max-width: 100% !important; }
+      main section#newsletter .form-container input:not(:last-child) {
+        margin-bottom: 12px; }
+
+  footer {
+    padding: 24px 5% !important;
+    flex-direction: column !important;
+    text-align: center; }
+    footer *:not(:last-child) {
+      margin-bottom: 24px; } }
 
 /*# sourceMappingURL=styles.css.map */
