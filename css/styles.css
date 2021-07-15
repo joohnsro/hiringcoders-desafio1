@@ -139,8 +139,12 @@ body {
     padding: 2% 5% !important; }
     main section#index .description {
       max-width: 100% !important; }
-      main section#index .description h1, main section#index .description p {
-        max-width: 90%; }
+      main section#index .description h1 {
+        max-width: 91% !important; }
+        main section#index .description h1 small {
+          font-size: 24px !important; }
+      main section#index .description p {
+        max-width: 100%; }
     main section#reasons h2 {
       font-size: 42px !important;
       text-align: center;
